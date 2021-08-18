@@ -19,6 +19,14 @@ const ROW_HEIGHT = 25;
 
 const elementRows = [];
 
+document.querySelector('#reorderBtn').addEventListener('click', function () {
+  elementRows.reverse();
+  elementRows.forEach(function (elementRow, rowIndex) {
+    elementRow.style.transform =
+      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
+  });
+});
+
 function layoutGrid() {
   const elementContainer = document.querySelector('#elementContainer');
   elementContainer.style.width = COL_COUNT * COL_WIDTH + 'px';
@@ -48,13 +56,5 @@ function layoutGrid() {
     elementContainer.appendChild(elementRow);
   }
 }
-
-document.querySelector('#reorderBtn').addEventListener('click', function () {
-  elementRows.reverse();
-  elementRows.forEach(function (elementRow, rowIndex) {
-    elementRow.style.transform =
-      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
-  });
-});
 
 layoutGrid();
