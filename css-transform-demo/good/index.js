@@ -29,7 +29,8 @@ function layoutGrid() {
   for (let rowIndex = 0; rowIndex < ROW_COUNT; rowIndex++) {
     const elementRow = document.createElement('div');
     elementRow.classList.add('row');
-    elementRow.style.transform = 'translateY(' + rowIndex * ROW_HEIGHT + 'px)';
+    elementRow.style.transform =
+      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
     elementRow.style.backgroundColor = colors[rowIndex % colors.length];
 
     for (let colIndex = 0; colIndex < COL_COUNT; colIndex++) {
@@ -51,7 +52,8 @@ function layoutGrid() {
 document.querySelector('#reorderBtn').addEventListener('click', function () {
   elementRows.reverse();
   elementRows.forEach(function (elementRow, rowIndex) {
-    elementRow.style.transform = 'translateY(' + rowIndex * ROW_HEIGHT + 'px)';
+    elementRow.style.transform =
+      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
   });
 });
 
