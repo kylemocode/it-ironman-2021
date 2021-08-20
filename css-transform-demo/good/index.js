@@ -23,7 +23,7 @@ document.querySelector('#reorderBtn').addEventListener('click', function () {
   elementRows.reverse();
   elementRows.forEach(function (elementRow, rowIndex) {
     elementRow.style.transform =
-      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
+      'translate(0, ' + rowIndex * ROW_HEIGHT + 'px)';
   });
 });
 
@@ -38,7 +38,7 @@ function layoutGrid() {
     const elementRow = document.createElement('div');
     elementRow.classList.add('row');
     elementRow.style.transform =
-      'translate3d(0, ' + rowIndex * ROW_HEIGHT + 'px, 0)';
+      'translate(0, ' + rowIndex * ROW_HEIGHT + 'px)';
     elementRow.style.backgroundColor = colors[rowIndex % colors.length];
 
     for (let colIndex = 0; colIndex < COL_COUNT; colIndex++) {

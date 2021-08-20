@@ -1,8 +1,14 @@
+/* uncomment it if you want to see the bad experience */
+/* * {
+  will-change: transform;
+} */
+
 .row {
   height: 25px;
   box-sizing: border-box;
   position: absolute;
   width: 100%;
+  will-change: transofrm;
   transition: transform 0.5s;
 }
 
